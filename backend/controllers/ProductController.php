@@ -3,20 +3,29 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\base\Module;
 use backend\models\Product;
 use backend\models\ProductSearch;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
+use yii\web\HttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\NotAcceptableHttpException;
-use yii\helpers\ArrayHelper;
+use backend\services\ProductReadService;
 
 /**
  * ProductController implements the CRUD actions for Product model.
  */
 class ProductController extends Controller
 {
+    private $productReadService;
+
+    public function __construct(string $id, Module $module, ProductReadService $productReadService, array $config = [])
+    {
+        parent::__construct($id, $module, $config);
+        $this->productReadService = $productReadService;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -60,15 +69,22 @@ class ProductController extends Controller
         ]);
     }
 
-    public function actionViewAjax($id) {
-        if (Yii::$app->request->isAjax) {
-            return $this->renderAjax('view-ajax', [
-                'model' => $this->findModel($id),
-//                'characteristics' => ArrayHelper::map($this->findModel($id)->getProductCharacteristics(), 'characteristic', 'characteristicValue')
-            ]);
-        } else {
-            throw new NotAcceptableHttpException('Only ajax requests are allowed');
+    /**
+     * @param $id
+     * @return string
+     * @throws HttpException
+     */
+    public function actionViewFull($id) {
+        if (!Yii::$app->request->isAjax) {
+            throw new HttpException(405, 'Only ajax requests are allowed');
         }
+
+        $model = $this->findModel($id);
+
+        return $this->renderAjax('view-full', [
+            'model' => $model,
+            'characteristics' => $this->productReadService->getProductCharacteristics($model)
+        ]);
     }
 
     /**

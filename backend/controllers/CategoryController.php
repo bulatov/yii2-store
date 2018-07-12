@@ -7,6 +7,7 @@ use backend\models\Category;
 use backend\models\CategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\HttpException;
 use yii\filters\VerbFilter;
 
 /**
@@ -71,6 +72,31 @@ class CategoryController extends Controller
         }
 
         return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * @return string|\yii\web\Response
+     * @throws HttpException
+     */
+    public function actionCreateAjax() {
+        /*if (!Yii::$app->request->isAjax) {
+            throw new HttpException(405, 'Only ajax requests are allowed');
+        }*/
+
+        $model = new Category();
+
+        if (!empty(Yii::$app->request->post())) {
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return;
+            } else {
+                throw new \yii\web\ServerErrorHttpException();
+            }
+            //return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->renderAjax('create-ajax', [
             'model' => $model,
         ]);
     }

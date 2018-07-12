@@ -92,7 +92,7 @@ class Product extends \yii\db\ActiveRecord
      */
     public function getProductCharacteristics()
     {
-        return $this->hasMany(ProductCharacteristic::className(), ['id' => 'product_id'])->all();
+        return $this->hasMany(ProductCharacteristic::className(), ['product_id' => 'id'])->all();
     }
 
     /**

@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Product */
+/* @var $characteristics array */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
@@ -14,35 +15,37 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
+    <?php
+        $attributes = [
             'id',
             'name',
             'description:ntext',
             'price',
-            //'category_id',
             [
                 'attribute' => 'category_id',
-                'value' => function($model) {
-                    return $model->category->name;
-                }
+                'value' => $model->category->name
             ],
-            //'subcategory_id',
             [
                 'attribute' => 'subcategory_id',
-                'value' => function($model) {
-                    return $model->subcategory->name;
-                }
+                'value' => $model->subcategory->name
             ],
-            //'status_id',
             [
                 'attribute' => 'status_id',
-                'value' => function($model) {
-                    return $model->status->name;
-                }
-            ],
-        ],
-    ]) ?>
+                'value' => $model->status->name
+            ]
+        ];
+
+        foreach($model->getProductCharacteristics() as $productCharacteristic) {
+            $attributes[] = [
+                'label' => $productCharacteristic->characteristic->name,
+                'value' => $productCharacteristic->characteristicValue->value
+            ];
+        }
+
+        echo DetailView::widget([
+            'model' => $model,
+            'attributes' => $attributes
+        ]);
+    ?>
 
 </div>

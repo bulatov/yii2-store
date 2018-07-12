@@ -9,6 +9,7 @@ use backend\models\Subcategory;
 use backend\models\Status;
 
 use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\ProductSearch */
@@ -64,29 +65,19 @@ $this->params['breadcrumbs'][] = $this->title;
                     'view' => function($url, $model) {
                         return Html::a(
                             '<span class="glyphicon glyphicon-eye-open"></span>',
-                            str_replace('view', 'view-ajax', $url),
+                            str_replace('view', 'view-full', $url),
                             ['class' => 'view', 'data-pjax' => '0']
                         );
                     },
                 ]
             ],
         ],
-    ]); ?>
+    ]) ?>
 
     <?php
-        $this->registerJs(
-        "$('.view').click(function(e){
-               e.preventDefault();      
-               $('#pModal').modal('show')
-                          .find('.modal-content')
-                          .load($(this).attr('href'));  
-           });",
-    \yii\web\View::POS_LOAD
-        );
-
         Pjax::begin();
-            yii\bootstrap\Modal::begin(['id'=>'pModal',]);
-            yii\bootstrap\Modal::end();
+            Modal::begin(['id'=>'pModal']);
+            Modal::end();
         Pjax::end();
     ?>
 </div>
