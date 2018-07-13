@@ -49,7 +49,7 @@ use yii\bootstrap\Modal;
             ['prompt' => 'Выберите статус']
     ) ?>
     <div class="form-group">
-        <?= Html::button('Создать категорию', ['class' => 'btn btn-primary', 'data-pjax' => 0, 'href'=> '/category/create-ajax']) ?>
+        <?= Html::button('Добавить категорию', ['class' => 'btn btn-primary', 'data-pjax' => 0, 'href'=> '/category/create-from-product-page']) ?>
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 

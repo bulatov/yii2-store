@@ -80,7 +80,7 @@ class CategoryController extends Controller
      * @return string|\yii\web\Response
      * @throws HttpException
      */
-    public function actionCreateAjax() {
+    public function actionCreateFromProductPage() {
         /*if (!Yii::$app->request->isAjax) {
             throw new HttpException(405, 'Only ajax requests are allowed');
         }*/
@@ -89,14 +89,12 @@ class CategoryController extends Controller
 
         if (!empty(Yii::$app->request->post())) {
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return;
-            } else {
-                throw new \yii\web\ServerErrorHttpException();
+
             }
-            //return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['/product/create']);
         }
 
-        return $this->renderAjax('create-ajax', [
+        return $this->renderAjax('create', [
             'model' => $model,
         ]);
     }
