@@ -12,6 +12,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\NotAcceptableHttpException;
 use backend\services\ProductReadService;
+use backend\components\Notification;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -94,6 +95,7 @@ class ProductController extends Controller
      */
     public function actionCreate()
     {
+        Notification::notify(Notification::KEY_NEW_MESSAGE, Yii::$app->user->id, 1);
         $model = new Product();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

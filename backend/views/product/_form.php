@@ -11,6 +11,7 @@ use backend\models\Status;
 
 use yii\widgets\Pjax;
 use yii\bootstrap\Modal;
+use machour\yii2\notifications\widgets\NotificationsWidget;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Product */
@@ -60,6 +61,21 @@ use yii\bootstrap\Modal;
             Modal::begin(['id'=>'pModal']);
             Modal::end();
         Pjax::end();
+    ?>
+
+    <?=
+        NotificationsWidget::widget([
+            'theme' => NotificationsWidget::THEME_GROWL,
+            'clientOptions' => [
+                'location' => 'br',
+            ],
+            'counters' => [
+                '.notifications-header-count',
+                '.notifications-icon-count'
+            ],
+            'markAllSeenSelector' => '#notification-seen-all',
+            'listSelector' => '#notifications',
+        ]);
     ?>
 
 </div>

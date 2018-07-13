@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "39ae47da7d033eedc8a4e644a70d3444",
+    "content-hash": "7ca96ae535c80c453f39ad169a6d2740",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -327,6 +327,54 @@
                 "html"
             ],
             "time": "2018-02-23T01:58:20+00:00"
+        },
+        {
+            "name": "fortawesome/font-awesome",
+            "version": "v4.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "shasum": ""
+            },
+            "require-dev": {
+                "jekyll": "1.0.2",
+                "lessc": "1.4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.6.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OFL-1.1",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Gandy",
+                    "email": "dave@fontawesome.io",
+                    "homepage": "http://twitter.com/davegandy",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The iconic font and CSS framework",
+            "homepage": "http://fontawesome.io/",
+            "keywords": [
+                "FontAwesome",
+                "awesome",
+                "bootstrap",
+                "font",
+                "icon"
+            ],
+            "time": "2016-10-24T15:52:54+00:00"
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
@@ -1514,17 +1562,118 @@
             "time": "2015-12-05T10:37:16+00:00"
         },
         {
+            "name": "machour/yii2-notifications",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/machour/yii2-notifications.git",
+                "reference": "e07184024319c195c6dfb413100eff63bc902735"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/machour/yii2-notifications/zipball/e07184024319c195c6dfb413100eff63bc902735",
+                "reference": "e07184024319c195c6dfb413100eff63bc902735",
+                "shasum": ""
+            },
+            "require": {
+                "rmrevin/yii2-fontawesome": "~2.15",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "machour\\yii2\\notifications\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mehdi Achour",
+                    "email": "machour@gmail.com"
+                }
+            ],
+            "description": "Notifications for your Yii2 app",
+            "keywords": [
+                "growl",
+                "notification",
+                "notify",
+                "noty",
+                "yii"
+            ],
+            "time": "2017-11-20T09:55:32+00:00"
+        },
+        {
+            "name": "rmrevin/yii2-fontawesome",
+            "version": "2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rmrevin/yii2-fontawesome.git",
+                "reference": "2ebb38f62727a46dcd06d27bb73c4a5833b54f74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/2ebb38f62727a46dcd06d27bb73c4a5833b54f74",
+                "reference": "2ebb38f62727a46dcd06d27bb73c4a5833b54f74",
+                "shasum": ""
+            },
+            "require": {
+                "fortawesome/font-awesome": "~4.7",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "2.0.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "rmrevin\\yii\\fontawesome\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Revin Roman",
+                    "email": "roman@rmrevin.com",
+                    "homepage": "https://rmrevin.com/"
+                }
+            ],
+            "description": "Asset Bundle for Yii2 with Font Awesome",
+            "keywords": [
+                "asset",
+                "awesome",
+                "bundle",
+                "font",
+                "yii"
+            ],
+            "time": "2017-04-03T14:19:13+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "c7f2318453b9115fb25f7b5c645c97cd60491a3e"
+                "reference": "49819a4381cf0d8dd3c811d37b9680c784d35db2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/c7f2318453b9115fb25f7b5c645c97cd60491a3e",
-                "reference": "c7f2318453b9115fb25f7b5c645c97cd60491a3e",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/49819a4381cf0d8dd3c811d37b9680c784d35db2",
+                "reference": "49819a4381cf0d8dd3c811d37b9680c784d35db2",
                 "shasum": ""
             },
             "require": {
@@ -1570,7 +1719,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2018-07-04T11:13:39+00:00"
+            "time": "2018-07-13T07:05:03+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -1578,12 +1727,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "1e932ff7dd3261167ce04fbde6fbc0e492feae83"
+                "reference": "a55c7ee600cbde0def057e81748992a5dedad851"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/1e932ff7dd3261167ce04fbde6fbc0e492feae83",
-                "reference": "1e932ff7dd3261167ce04fbde6fbc0e492feae83",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/a55c7ee600cbde0def057e81748992a5dedad851",
+                "reference": "a55c7ee600cbde0def057e81748992a5dedad851",
                 "shasum": ""
             },
             "require": {
@@ -1670,7 +1819,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-07-05T18:55:13+00:00"
+            "time": "2018-07-11T16:53:13+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -2178,12 +2327,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "30798ab0ca3e47681468384292f24a2b914ff599"
+                "reference": "9c9e33857cf41bb9cbc8c1830e4d817fbacb03a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/30798ab0ca3e47681468384292f24a2b914ff599",
-                "reference": "30798ab0ca3e47681468384292f24a2b914ff599",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/9c9e33857cf41bb9cbc8c1830e4d817fbacb03a2",
+                "reference": "9c9e33857cf41bb9cbc8c1830e4d817fbacb03a2",
                 "shasum": ""
             },
             "require": {
@@ -2197,7 +2346,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -2220,7 +2369,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2018-07-09T11:46:49+00:00"
+            "time": "2018-07-13T06:28:23+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3333,12 +3482,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "c9eb293d22c2f16b1304281538b7408210a41585"
+                "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/c9eb293d22c2f16b1304281538b7408210a41585",
-                "reference": "c9eb293d22c2f16b1304281538b7408210a41585",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
+                "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
                 "shasum": ""
             },
             "require": {
@@ -3389,7 +3538,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2018-06-14T16:44:28+00:00"
+            "time": "2018-07-12T15:12:46+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -3851,12 +4000,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "339364a05a5b7e41ca977847681e054dc8b4eb60"
+                "reference": "ee62af6ffcb2776230eef00554e03b170e51a951"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/339364a05a5b7e41ca977847681e054dc8b4eb60",
-                "reference": "339364a05a5b7e41ca977847681e054dc8b4eb60",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/ee62af6ffcb2776230eef00554e03b170e51a951",
+                "reference": "ee62af6ffcb2776230eef00554e03b170e51a951",
                 "shasum": ""
             },
             "require": {
@@ -3900,7 +4049,7 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-06T09:59:09+00:00"
+            "time": "2018-07-12T07:05:20+00:00"
         },
         {
             "name": "symfony/console",
@@ -3908,12 +4057,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "352654b8b95d21eddabe4967bce1e84e5c17ecb1"
+                "reference": "b203891a206dd5fe867e22fcacfdf2a28e787c1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/352654b8b95d21eddabe4967bce1e84e5c17ecb1",
-                "reference": "352654b8b95d21eddabe4967bce1e84e5c17ecb1",
+                "url": "https://api.github.com/repos/symfony/console/zipball/b203891a206dd5fe867e22fcacfdf2a28e787c1f",
+                "reference": "b203891a206dd5fe867e22fcacfdf2a28e787c1f",
                 "shasum": ""
             },
             "require": {
@@ -3968,7 +4117,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-09T14:07:29+00:00"
+            "time": "2018-07-11T09:58:49+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -4558,12 +4707,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "ee4d072af2788208edaed2b24b5acbc34b8631a1"
+                "reference": "60c53d399ebf12cac9b8daa1fa9d81b8b1ee9a91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/ee4d072af2788208edaed2b24b5acbc34b8631a1",
-                "reference": "ee4d072af2788208edaed2b24b5acbc34b8631a1",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/60c53d399ebf12cac9b8daa1fa9d81b8b1ee9a91",
+                "reference": "60c53d399ebf12cac9b8daa1fa9d81b8b1ee9a91",
                 "shasum": ""
             },
             "require": {
@@ -4599,7 +4748,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2018-06-12T19:29:12+00:00"
+            "time": "2018-07-11T19:23:16+00:00"
         }
     ],
     "aliases": [],
@@ -4608,7 +4757,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=7.2.0"
     },
     "platform-dev": []
 }

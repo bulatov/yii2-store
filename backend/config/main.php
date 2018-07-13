@@ -14,7 +14,23 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'notifications' => [
+            'class' => 'machour\yii2\notifications\NotificationsModule',
+            // Point this to your own Notification class
+            // See the "Declaring your notifications" section below
+            'notificationClass' => 'backend\components\Notification',
+            // Allow to have notification with same (user_id, key, key_id)
+            // Default to FALSE
+            'allowDuplicate' => true,
+            // Allow custom date formatting in database
+            'dbDateFormat' => 'Y-m-d H:i:s',
+            // This callable should return your logged in user Id
+            'userId' => function() {
+                return \Yii::$app->user->id;
+            }
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
